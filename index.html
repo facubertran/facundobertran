@@ -4,6 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ideas para San Martín, Chaco — Un plan en 3 fases</title>
+<meta name="description" content="Un plan en 3 fases para General José de San Martín, Chaco: estado moderno, nueva matriz productiva y educación con salida laboral real.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ideas para San Martín, Chaco — Un plan en 3 fases">
+<meta property="og:description" content="Un plan en 3 fases para General José de San Martín, Chaco: estado moderno, nueva matriz productiva y educación con salida laboral real.">
+<meta property="og:image" content="og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ideas para San Martín, Chaco — Un plan en 3 fases">
+<meta name="twitter:description" content="Un plan en 3 fases para General José de San Martín, Chaco: estado moderno, nueva matriz productiva y educación con salida laboral real.">
+<meta name="twitter:image" content="og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -116,6 +125,31 @@
   .stat-label{font-size:14px;color:var(--muted);}
   .stat-src{font-size:11px;color:#5f5f66;margin-top:10px;display:block;}
 
+  /* FODA */
+  .foda-grid{
+    display:grid;grid-template-columns:1fr;
+    gap:20px;
+  }
+  @media(min-width:640px){
+    .foda-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  .foda-card{
+    background:var(--card);border:1px solid var(--border);border-top:4px solid var(--border);
+    border-radius:12px;padding:28px;
+  }
+  .foda-card.pos{border-top-color:var(--yellow);}
+  .foda-card.neg{border-top-color:#e05555;}
+  .foda-card .foda-sub{
+    font-size:11.5px;color:var(--muted);text-transform:uppercase;
+    letter-spacing:1.5px;margin-bottom:6px;display:block;
+  }
+  .foda-card h4{font-size:18px;margin-bottom:16px;}
+  .foda-card ul{list-style:none;display:grid;gap:10px;}
+  .foda-card li{padding-left:22px;position:relative;font-size:14px;color:var(--text);}
+  .foda-card.pos li::before{content:"+";position:absolute;left:0;color:var(--yellow);font-weight:800;}
+  .foda-card.neg li::before{content:"–";position:absolute;left:0;color:#e05555;font-weight:800;}
+  .foda-src{font-size:11px;color:#5f5f66;margin-top:14px;display:block;}
+
   /* ROADMAP DE FASES */
   .roadmap{
     display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
@@ -171,6 +205,49 @@
     content:"→";position:absolute;left:0;color:var(--yellow);font-weight:800;
   }
 
+  /* ORGANIGRAMA */
+  .org-note{color:var(--muted);font-size:15px;max-width:700px;margin:0 0 40px;}
+  .org-wrap{padding:10px 0 30px;overflow-x:auto;}
+  .org-root-wrap{text-align:center;}
+  .org-root{
+    display:inline-block;background:var(--yellow);color:var(--bg);
+    font-family:'Archivo Black',sans-serif;font-size:15px;text-transform:uppercase;
+    padding:14px 30px;border-radius:8px;
+  }
+  .org-connector{width:2px;height:28px;background:var(--border);margin:0 auto;}
+  .org-row{
+    display:flex;flex-wrap:wrap;justify-content:center;gap:22px;
+    position:relative;padding-top:28px;min-width:900px;
+  }
+  .org-row::before{
+    content:"";position:absolute;top:0;left:9%;right:9%;height:2px;background:var(--border);
+  }
+  .org-card{
+    position:relative;
+    background:var(--card);border:1px solid var(--border);border-radius:10px;
+    padding:20px;width:210px;flex-shrink:0;
+  }
+  .org-card::before{
+    content:"";position:absolute;top:-28px;left:50%;transform:translateX(-50%);
+    width:2px;height:28px;background:var(--border);
+  }
+  .org-card.highlight{border-color:var(--yellow);}
+  .org-card .star{
+    position:absolute;top:-11px;right:12px;background:var(--yellow);color:var(--bg);
+    font-size:10px;font-weight:800;padding:3px 8px;border-radius:12px;letter-spacing:0.5px;
+  }
+  .org-card h5{font-family:'Archivo Black',sans-serif;font-size:13.5px;margin-bottom:8px;text-transform:uppercase;line-height:1.25;}
+  .org-card p{font-size:12.5px;color:var(--muted);}
+  .org-zoom{
+    margin-top:36px;background:var(--card);border:1px solid var(--yellow);border-radius:12px;
+    padding:30px;
+  }
+  .org-zoom .tag{color:var(--yellow);font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;display:block;}
+  .org-zoom h4{font-size:19px;margin-bottom:14px;}
+  .org-zoom ul{list-style:none;display:grid;gap:10px;}
+  .org-zoom li{padding-left:24px;position:relative;font-size:14.5px;color:var(--text);}
+  .org-zoom li::before{content:"→";position:absolute;left:0;color:var(--yellow);font-weight:800;}
+
   /* FASE 2 / FASE 3 blocks */
   .fase-block{
     border:1px solid var(--border);
@@ -220,6 +297,60 @@
     font-size:12px;font-weight:700;color:var(--muted);
     border:1px solid var(--border);border-radius:20px;padding:6px 14px;
   }
+
+  /* CRONOGRAMA / TIMELINE */
+  .subhead{font-size:clamp(22px,3.2vw,30px);margin:56px 0 10px;}
+  .subhead-lead{color:var(--muted);font-size:15px;max-width:700px;margin-bottom:30px;}
+  .timeline{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:24px;position:relative;
+  }
+  .tl-item{
+    position:relative;padding-top:38px;
+    background:var(--card);border:1px solid var(--border);border-radius:10px;padding:38px 22px 22px;
+  }
+  .tl-dot{
+    position:absolute;top:18px;left:22px;
+    width:30px;height:30px;border-radius:50%;background:var(--yellow);color:var(--bg);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Archivo Black',sans-serif;font-size:12px;
+  }
+  .tl-item h5{font-size:13px;text-transform:uppercase;margin:6px 0 12px;font-family:'Archivo Black',sans-serif;letter-spacing:0.5px;}
+  .tl-item ul{list-style:none;display:grid;gap:9px;}
+  .tl-item li{font-size:13.5px;color:var(--muted);padding-left:15px;position:relative;}
+  .tl-item li::before{content:"·";position:absolute;left:0;color:var(--yellow);font-weight:800;}
+
+  /* KPI TABLE */
+  .kpi-wrap{overflow-x:auto;}
+  .kpi-table{width:100%;border-collapse:collapse;margin-top:6px;min-width:520px;}
+  .kpi-table th,.kpi-table td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--border);font-size:14px;}
+  .kpi-table th{color:var(--muted);text-transform:uppercase;font-size:11.5px;letter-spacing:1px;font-weight:700;}
+  .kpi-table td.pilarcol{color:var(--yellow);font-weight:700;white-space:nowrap;}
+  .kpi-table td.plazo{color:var(--text);font-weight:700;white-space:nowrap;}
+
+  /* CASOS DE REFERENCIA */
+  .casos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
+  .caso-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:26px;}
+  .caso-card .caso-loc{color:var(--yellow);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;display:block;}
+  .caso-card h4{font-size:17px;margin-bottom:10px;}
+  .caso-card p{font-size:14px;color:var(--muted);margin-bottom:10px;}
+  .caso-card .caso-src{font-size:11px;color:#5f5f66;}
+
+  /* FAQ */
+  .faq-item{border-bottom:1px solid var(--border);padding:22px 0;}
+  .faq-item:first-child{border-top:1px solid var(--border);}
+  .faq-item h4{font-size:16px;margin-bottom:8px;color:var(--text);}
+  .faq-item p{font-size:14.5px;color:var(--muted);}
+
+  /* SHARE BUTTONS */
+  .share-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:22px;}
+  .btn-share{
+    display:inline-flex;align-items:center;gap:8px;
+    font-weight:700;font-size:14px;
+    padding:12px 20px;border-radius:6px;border:2px solid var(--border);color:var(--text);
+    cursor:pointer;background:transparent;font-family:'Inter',sans-serif;
+  }
+  .btn-share:hover{border-color:var(--yellow);color:var(--yellow);}
 </style>
 </head>
 <body>
@@ -229,9 +360,11 @@
     <div class="logo">IDEAS PARA <span>SAN MARTÍN</span></div>
     <div class="navlinks">
       <a href="#diagnostico">Diagnóstico</a>
+      <a href="#foda">FODA</a>
       <a href="#fases">El plan</a>
       <a href="#pilares">Fase 1</a>
-      <a href="#honestidad">Cómo pienso el orden</a>
+      <a href="#casos">Casos</a>
+      <a href="#faq">FAQ</a>
       <a href="#contacto">Opinar</a>
     </div>
     <a href="https://instagram.com/facundobertran" target="_blank" class="btn btn-primary" style="padding:10px 20px;font-size:13px;">Instagram</a>
@@ -280,6 +413,58 @@
     <p style="margin-top:32px;color:var(--muted);font-size:15px;max-width:700px;">
       La economía local se sostiene mayormente en el empleo público y en la actividad ganadera y agrícola de la zona (históricamente algodonera, hoy también con soja, tabaco y maíz). No hay una industria propia que genere empleo privado a escala, y nadie está saliendo a vender a San Martín como destino de inversión.
     </p>
+  </div>
+</section>
+
+<section class="section" id="foda">
+  <div class="wrap">
+    <div class="kicker">MIRADA HONESTA</div>
+    <h2>FODA de la ciudad</h2>
+    <p class="section-lead">Antes de armar un plan hay que mirar de frente lo bueno, lo malo y lo que depende de nosotros o no.</p>
+    <div class="foda-grid">
+      <div class="foda-card pos">
+        <span class="foda-sub">Fortalezas</span>
+        <h4>Lo que ya tenemos a favor</h4>
+        <ul>
+          <li>Crecimiento poblacional sostenido: +26% entre 2010 y 2022.</li>
+          <li>Rol de cabecera del departamento Libertador General San Martín.</li>
+          <li>Base productiva diversificada: algodón, soja, tabaco, maíz y ganadería.</li>
+          <li>Ya existe un antecedente de vinculación universitaria (extensión áulica de la UTN).</li>
+        </ul>
+        <span class="foda-src">Fuente: INDEC Censo 2022; UTN FRRe</span>
+      </div>
+      <div class="foda-card pos">
+        <span class="foda-sub">Oportunidades</span>
+        <h4>Lo que está sin explotar</h4>
+        <ul>
+          <li>Tratamiento y valorización de residuos: industria nueva con demanda de mano de obra no calificada.</li>
+          <li>Agroindustria con valor agregado sobre lo que hoy se produce en bruto.</li>
+          <li>Extender UNNE/UNCAUS en la ciudad, apalancando el antecedente de la UTN.</li>
+          <li>Modernizar el estado municipal: bajo costo, alto impacto, todavía nadie lo hizo.</li>
+        </ul>
+      </div>
+      <div class="foda-card neg">
+        <span class="foda-sub">Debilidades</span>
+        <h4>Lo que nos frena hoy</h4>
+        <ul>
+          <li>Economía muy concentrada en empleo público y actividad primaria.</li>
+          <li>Capital humano de calificación relativamente baja, en promedio.</li>
+          <li>Oferta terciaria estancada hace décadas: solo profesorados en el IES Fracchia.</li>
+          <li>Sin trámites digitales: procesos 100% presenciales y en papel.</li>
+        </ul>
+      </div>
+      <div class="foda-card neg">
+        <span class="foda-sub">Amenazas</span>
+        <h4>Lo que no depende solo de nosotros</h4>
+        <ul>
+          <li>Dependencia de la coparticipación provincial para sostener las cuentas municipales.</li>
+          <li>Volatilidad de precios de los commodities agropecuarios de los que depende la economía local.</li>
+          <li>Fuga de jóvenes calificados hacia Resistencia u otras ciudades por falta de oferta educativa y laboral.</li>
+          <li>Otras ciudades pueden captar antes las mismas inversiones si San Martín no actúa primero.</li>
+        </ul>
+        <span class="foda-src">Fuente: Chaco.gob.ar, adelantos de coparticipación a municipios (abr. 2025)</span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -358,6 +543,124 @@
         <li>Objetivo de mediano plazo (5 a 8 años): sentar las bases institucionales para una sede universitaria propia.</li>
       </ul>
     </div>
+
+    <div class="kicker" style="margin-top:50px;">CÓMO SE VERÍA</div>
+    <h2 style="font-size:clamp(24px,3.4vw,34px);">Organigrama tentativo</h2>
+    <p class="org-note">Un boceto de cómo podría ordenarse el ejecutivo municipal: pocas secretarías, cada una con una función clara. Nada de esto es definitivo — es un punto de partida para discutir, y va a terminar de definirse con criterio técnico. Las marcadas con ⭐ son las que concentran el foco de la Fase 1.</p>
+    <div class="org-wrap">
+      <div class="org-root-wrap">
+        <div class="org-root">Intendencia</div>
+        <div class="org-connector"></div>
+      </div>
+      <div class="org-row">
+        <div class="org-card">
+          <h5>Gobierno y Coordinación General</h5>
+          <p>Articulación institucional, RR.HH. y despacho general.</p>
+        </div>
+        <div class="org-card">
+          <h5>Hacienda y Administración</h5>
+          <p>Presupuesto, recaudación y equilibrio fiscal.</p>
+        </div>
+        <div class="org-card highlight">
+          <span class="star">★ Pilar 1</span>
+          <h5>Modernización y Gestión Pública</h5>
+          <p>Trámites online, digitalización e indicadores de gestión.</p>
+        </div>
+        <div class="org-card highlight">
+          <span class="star">★ Pilar 2</span>
+          <h5>Producción, Empleo e Inversiones</h5>
+          <p>Captación de inversiones, habilitaciones y matriz productiva.</p>
+        </div>
+        <div class="org-card">
+          <h5>Obras y Servicios Públicos</h5>
+          <p>Alumbrado, recolección de residuos y mantenimiento urbano.</p>
+        </div>
+        <div class="org-card">
+          <h5>Desarrollo Humano y Social</h5>
+          <p>Asistencia social, niñez y discapacidad.</p>
+        </div>
+        <div class="org-card highlight">
+          <span class="star">★ Pilar 3</span>
+          <h5>Educación y Vinculación Universitaria</h5>
+          <p>Mesa de gestión con el IES Fracchia, UNNE, UNCAUS y UTN.</p>
+        </div>
+      </div>
+    </div>
+    <div class="org-zoom">
+      <span class="tag">Zoom · la secretaría clave de la Fase 1</span>
+      <h4>Secretaría de Modernización y Gestión Pública</h4>
+      <ul>
+        <li>Dirección de Gobierno Digital y Trámites Online.</li>
+        <li>Dirección de Procesos y Recursos Humanos.</li>
+        <li>Dirección de Datos e Indicadores de Gestión.</li>
+      </ul>
+    </div>
+
+    <h3 class="subhead">Cronograma tentativo — primeros 12 meses</h3>
+    <p class="subhead-lead">Un orden posible para arrancar la Fase 1. Se va a ajustar con el diagnóstico real una vez adentro de la gestión.</p>
+    <div class="timeline">
+      <div class="tl-item">
+        <span class="tl-dot">1</span>
+        <h5>Meses 1 a 3</h5>
+        <ul>
+          <li>Relevamiento de procesos y trámites más demandados.</li>
+          <li>Diseño del nuevo organigrama.</li>
+          <li>Primeras reuniones con universidades (UNNE, UNCAUS, UTN).</li>
+          <li>Primeros contactos con inversores potenciales.</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <span class="tl-dot">2</span>
+        <h5>Meses 4 a 6</h5>
+        <ul>
+          <li>Lanzamiento de los primeros trámites online (los más usados).</li>
+          <li>Publicación de los primeros indicadores de gestión.</li>
+          <li>Ventanilla única para habilitaciones comerciales.</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <span class="tl-dot">3</span>
+        <h5>Meses 7 a 12</h5>
+        <ul>
+          <li>Portal de trámites online completo.</li>
+          <li>Primer convenio de vinculación educativa firmado.</li>
+          <li>Primera misión formal de promoción de inversiones.</li>
+          <li>Evaluación de ampliar la oferta del IES Fracchia.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="subhead">Metas concretas, con plazo</h3>
+    <p class="subhead-lead">Para que esto no quede en buenas intenciones, cada pilar tiene un objetivo medible.</p>
+    <div class="kpi-wrap">
+      <table class="kpi-table">
+        <thead>
+          <tr><th>Pilar</th><th>Meta</th><th>Plazo</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="pilarcol">Estado</td>
+            <td>De 0 a al menos 5 trámites municipales clave disponibles online</td>
+            <td class="plazo">12 meses</td>
+          </tr>
+          <tr>
+            <td class="pilarcol">Matriz productiva</td>
+            <td>Al menos 1 inversión privada concreta anunciada y en instalación</td>
+            <td class="plazo">18 meses</td>
+          </tr>
+          <tr>
+            <td class="pilarcol">Educación</td>
+            <td>Al menos 1 convenio marco firmado con una universidad</td>
+            <td class="plazo">12 meses</td>
+          </tr>
+          <tr>
+            <td class="pilarcol">Estado</td>
+            <td>Indicadores de gestión (residuos, reclamos, trámites) publicados y actualizados</td>
+            <td class="plazo">6 meses</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </section>
 
@@ -399,7 +702,35 @@
   </div>
 </section>
 
-<section class="section" id="honestidad">
+<section class="section" id="casos">
+  <div class="wrap">
+    <div class="kicker">NO LO INVENTAMOS NOSOTROS</div>
+    <h2>Casos de referencia</h2>
+    <p class="section-lead">Nada de lo que proponemos es una idea de laboratorio. Son cosas que ya se hicieron, en ciudades argentinas, y que se pueden verificar.</p>
+    <div class="casos-grid">
+      <div class="caso-card">
+        <span class="caso-loc">Rafaela, Santa Fe (~100.000 hab.)</span>
+        <h4>Modernización y gobierno digital</h4>
+        <p>Desarrolló la app "Rafaela Ciudad" con trámites, información municipal y un módulo de participación ciudadana. Recibió una mención en el Premio a la Innovación de CIPPEC (2016), entre 40 políticas presentadas a nivel nacional.</p>
+        <span class="caso-src">Fuente: CIPPEC, Premio a la Innovación III Edición</span>
+      </div>
+      <div class="caso-card">
+        <span class="caso-loc">Necochea, Buenos Aires (~90.000 hab.)</span>
+        <h4>Empleo formal a partir del tratamiento de residuos</h4>
+        <p>Inauguró en 2025 una planta de separación y clasificación de residuos (NecoRecicla), operada junto a un taller protegido, con 44 puestos de trabajo formales. Es un modelo de inclusión laboral, no de empleo masivo, pero muestra que la actividad genera puestos reales.</p>
+        <span class="caso-src">Fuente: Necochea Digital; Municipalidad de Necochea</span>
+      </div>
+      <div class="caso-card">
+        <span class="caso-loc">Villa Mercedes, San Luis (~120.000 hab.)</span>
+        <h4>Una universidad nueva en una ciudad sin oferta previa</h4>
+        <p>La Universidad Nacional de Villa Mercedes (UNViMe) se creó por ley en 2009 por demanda local. Pasó de 600 estudiantes en 2017 a más de 4.000 en 2022, y sigue en expansión edilicia.</p>
+        <span class="caso-src">Fuente: El Diario de la República; Villa Mercedes Info</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="honestidad">
   <div class="wrap">
     <div class="kicker">REGLAS DEL JUEGO</div>
     <h2>Por qué en ese orden</h2>
@@ -421,6 +752,33 @@
   </div>
 </section>
 
+<section class="section" id="faq">
+  <div class="wrap">
+    <div class="kicker">PREGUNTAS FRECUENTES</div>
+    <h2>Antes de que preguntes</h2>
+    <div class="faq-item">
+      <h4>¿Esto es una campaña política?</h4>
+      <p>No, por ahora. Es un espacio para compartir un diagnóstico y un plan de trabajo como vecino. Si en algún momento se convierte en algo más formal, va a quedar claro acá.</p>
+    </div>
+    <div class="faq-item">
+      <h4>¿De qué partido sos?</h4>
+      <p>Todavía no lo definimos públicamente en esta web. Lo que sí está definido es el contenido del plan: equilibrio fiscal, estado moderno y foco en inversión privada.</p>
+    </div>
+    <div class="faq-item">
+      <h4>¿Cómo se financia todo esto?</h4>
+      <p>La Fase 1 no requiere gasto adicional relevante: es reorganizar lo que ya existe. La Fase 2 (obra pública) se financia solo con superávit genuino, nunca con deuda que comprometa el equilibrio fiscal.</p>
+    </div>
+    <div class="faq-item">
+      <h4>¿Por qué no prometés obras desde ya?</h4>
+      <p>Porque prometer obra sin decir de dónde sale la plata es la forma más común de mentirle a un vecino. Preferimos ser claros sobre el orden y las condiciones desde el principio.</p>
+    </div>
+    <div class="faq-item">
+      <h4>¿Puedo opinar o corregir algo del plan?</h4>
+      <p>Sí, para eso está el contacto al final de esta página.</p>
+    </div>
+  </div>
+</section>
+
 <section class="cta-final" id="contacto">
   <div class="wrap">
     <div class="kicker" style="justify-content:center;display:flex;">SUMÁ TU MIRADA</div>
@@ -429,14 +787,45 @@
     <div class="btnrow" style="justify-content:center;">
       <a href="https://instagram.com/facundobertran" target="_blank" class="btn btn-primary">Seguime en Instagram · @facundobertran</a>
     </div>
+    <div class="share-row">
+      <a id="share-whatsapp" href="#" target="_blank" class="btn-share">Compartir por WhatsApp</a>
+      <a id="share-facebook" href="#" target="_blank" class="btn-share">Compartir en Facebook</a>
+      <button id="share-copy" class="btn-share" type="button">Copiar link</button>
+    </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
     Facundo Bertrán — Ideas y propuestas para General José de San Martín, Chaco · <a href="https://instagram.com/facundobertran" target="_blank">@facundobertran</a>
+    <div style="margin-top:14px;">
+      <a href='http://www.freevisitorcounters.com'>Free Counters</a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=733011280a81c6fa773104094c4c0b44c41c5a5a'></script>
+      <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1592878/t/3"></script>
+    </div>
   </div>
 </footer>
+
+<script>
+  (function(){
+    var url = window.location.href;
+    var text = encodeURIComponent('Ideas y propuestas para San Martín, Chaco');
+    var encUrl = encodeURIComponent(url);
+    var wa = document.getElementById('share-whatsapp');
+    var fb = document.getElementById('share-facebook');
+    var copyBtn = document.getElementById('share-copy');
+    if(wa) wa.href = 'https://api.whatsapp.com/send?text=' + text + '%20' + encUrl;
+    if(fb) fb.href = 'https://www.facebook.com/sharer/sharer.php?u=' + encUrl;
+    if(copyBtn){
+      copyBtn.addEventListener('click', function(){
+        navigator.clipboard.writeText(url).then(function(){
+          var original = copyBtn.textContent;
+          copyBtn.textContent = '¡Copiado!';
+          setTimeout(function(){ copyBtn.textContent = original; }, 1800);
+        });
+      });
+    }
+  })();
+</script>
 
 </body>
 </html>
