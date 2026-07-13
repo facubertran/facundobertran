@@ -152,9 +152,11 @@
 
   /* ROADMAP DE FASES */
   .roadmap{
-    display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    display:grid;grid-template-columns:1fr;
     gap:20px;margin-bottom:20px;
   }
+  @media(min-width:640px){.roadmap{grid-template-columns:repeat(2,1fr);}}
+  @media(min-width:1000px){.roadmap{grid-template-columns:repeat(4,1fr);}}
   .phase-card{
     background:var(--card);border:1px solid var(--border);
     border-radius:12px;padding:28px;position:relative;
@@ -238,8 +240,13 @@
   }
   .org-card h5{font-family:'Archivo Black',sans-serif;font-size:13.5px;margin-bottom:8px;text-transform:uppercase;line-height:1.25;}
   .org-card p{font-size:12.5px;color:var(--muted);}
+  .org-zoom-row{
+    display:grid;grid-template-columns:1fr;
+    gap:24px;margin-top:36px;
+  }
+  @media(min-width:900px){.org-zoom-row{grid-template-columns:repeat(3,1fr);}}
   .org-zoom{
-    margin-top:36px;background:var(--card);border:1px solid var(--yellow);border-radius:12px;
+    background:var(--card);border:1px solid var(--yellow);border-radius:12px;
     padding:30px;
   }
   .org-zoom .tag{color:var(--yellow);font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;display:block;}
@@ -267,6 +274,16 @@
   .fase-block li{padding-left:26px;position:relative;font-size:15px;color:var(--text);}
   .fase-block li::before{content:"→";position:absolute;left:0;color:var(--yellow);font-weight:800;}
   .fase-block p.desc{color:var(--muted);font-size:15px;}
+  .fase-block h4.sub{
+    font-size:15px;text-transform:uppercase;font-family:'Archivo Black',sans-serif;
+    margin:28px 0 16px;letter-spacing:0.5px;color:var(--text);
+  }
+  .obra-grid{display:grid;grid-template-columns:1fr;gap:16px;}
+  @media(min-width:640px){.obra-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(min-width:1000px){.obra-grid{grid-template-columns:repeat(3,1fr);}}
+  .obra-card{background:var(--bg-alt);border:1px solid var(--border);border-radius:10px;padding:20px;}
+  .obra-card h5{font-family:'Archivo Black',sans-serif;font-size:13.5px;text-transform:uppercase;margin-bottom:8px;letter-spacing:0.3px;}
+  .obra-card p{font-size:13.5px;color:var(--muted);}
 
   /* HONESTIDAD */
   .honest{
@@ -363,6 +380,7 @@
       <a href="#foda">FODA</a>
       <a href="#fases">El plan</a>
       <a href="#pilares">Fase 1</a>
+      <a href="#fase15">Comisiones vecinales</a>
       <a href="#casos">Casos</a>
       <a href="#faq">FAQ</a>
       <a href="#contacto">Opinar</a>
@@ -471,7 +489,7 @@
 <section class="section" id="fases">
   <div class="wrap">
     <div class="kicker">CÓMO ESTÁ ORDENADO ESTE PLAN</div>
-    <h2>Tres fases, en ese orden</h2>
+    <h2>Cuatro fases, en ese orden</h2>
     <p class="section-lead">Cada fase depende de que la anterior se haya cumplido. No se anuncian todas juntas porque no todas se pueden financiar juntas — ese es justamente el problema con la forma en que se suele prometer.</p>
     <div class="roadmap">
       <div class="phase-card">
@@ -481,16 +499,22 @@
         <div class="phase-cond">Condición: ninguna — se puede empezar ya</div>
       </div>
       <div class="phase-card locked">
+        <span class="phase-num-badge" style="font-size:11px;">1.5</span>
+        <h4>Fase 1.5 — Comisiones vecinales</h4>
+        <p>Estructura estándar para comisiones barriales y una subsecretaría que canaliza sus pedidos. Resuelve lo chico —alumbrado, calles, espacios verdes— con obras de bajo costo.</p>
+        <div class="phase-cond">Condición: Fase 1 en marcha</div>
+      </div>
+      <div class="phase-card locked">
         <span class="phase-num-badge">2</span>
         <h4>Fase 2 — Invertir en obra</h4>
-        <p>Recién con superávit genuino y crecimiento de la recaudación por más actividad privada, se prioriza y financia obra pública e infraestructura.</p>
+        <p>Primero capital humano: una escuela municipal de apoyo educativo. Recién después, con superávit genuino y más actividad privada, obra pública e infraestructura de mayor escala.</p>
         <div class="phase-cond">Condición: equilibrio fiscal sostenido + Fase 1 en marcha</div>
       </div>
       <div class="phase-card locked">
         <span class="phase-num-badge">3</span>
         <h4>Fase 3 — Escalar</h4>
-        <p>Intensificar las fases 1 y 2: más inversión de mayor complejidad, capital humano más calificado, y una ciudad consolidada como polo regional.</p>
-        <div class="phase-cond">Condición: resultados sostenidos de Fase 1 y 2</div>
+        <p>Intensificar las fases anteriores: más inversión de mayor complejidad, capital humano más calificado, y una ciudad consolidada como polo regional.</p>
+        <div class="phase-cond">Condición: resultados sostenidos de las fases previas</div>
       </div>
     </div>
     <p style="color:var(--muted);font-size:14px;">Lo que sigue abajo es el detalle de cada fase, empezando por la Fase 1, que es donde está el foco de esta primera etapa de trabajo.</p>
@@ -544,6 +568,21 @@
       </ul>
     </div>
 
+    <h3 class="subhead">Plan de ordenamiento del tránsito</h3>
+    <p class="subhead-lead">Un complemento a los tres pilares, de bajo costo porque reorganiza lo que ya existe en vez de sumar estructura nueva.</p>
+    <div class="fase-block">
+      <span class="tag">Fase 1 · Tránsito y seguridad vial</span>
+      <h3>Ordenar el tránsito sin aumentar la planta municipal</h3>
+      <p class="desc">Hoy no hay señalización adecuada en los puntos más conflictivos, ni personal dedicado a la gestión del tránsito, ni campañas de concientización. Se resuelve reasignando personal municipal existente, en línea con la lógica del Pilar 1: menos cargos políticos, mejor uso de los recursos que ya están.</p>
+      <ul>
+        <li>Relevamiento y agregado de señalización vial —carteles y demarcación horizontal— en cruces y zonas críticas.</li>
+        <li>Reasignación de personal municipal existente a funciones de inspección y gestión de tránsito, sin sumar planta.</li>
+        <li>Presencia de inspectores en los puntos y horarios de mayor conflicto: entrada y salida de escuelas, cruces problemáticos.</li>
+        <li>Campañas de concientización de seguridad vial en escuelas y espacios públicos, en sintonía con los cursos de educación vial de la futura Escuela Municipal (Fase 2).</li>
+        <li>Relevamiento de necesidad de semaforización, que se ejecuta como obra concreta en la Fase 2.</li>
+      </ul>
+    </div>
+
     <div class="kicker" style="margin-top:50px;">CÓMO SE VERÍA</div>
     <h2 style="font-size:clamp(24px,3.4vw,34px);">Organigrama tentativo</h2>
     <p class="org-note">Un boceto de cómo podría ordenarse el ejecutivo municipal: pocas secretarías, cada una con una función clara. Nada de esto es definitivo — es un punto de partida para discutir, y va a terminar de definirse con criterio técnico. Las marcadas con ⭐ son las que concentran el foco de la Fase 1.</p>
@@ -555,7 +594,7 @@
       <div class="org-row">
         <div class="org-card">
           <h5>Gobierno y Coordinación General</h5>
-          <p>Articulación institucional, RR.HH. y despacho general.</p>
+          <p>Articulación institucional, RR.HH., despacho general y ordenamiento del tránsito.</p>
         </div>
         <div class="org-card">
           <h5>Hacienda y Administración</h5>
@@ -571,29 +610,46 @@
           <h5>Producción, Empleo e Inversiones</h5>
           <p>Captación de inversiones, habilitaciones y matriz productiva.</p>
         </div>
-        <div class="org-card">
-          <h5>Obras y Servicios Públicos</h5>
-          <p>Alumbrado, recolección de residuos y mantenimiento urbano.</p>
-        </div>
-        <div class="org-card">
-          <h5>Desarrollo Humano y Social</h5>
-          <p>Asistencia social, niñez y discapacidad.</p>
+        <div class="org-card highlight">
+          <span class="star">★ Fase 1.5</span>
+          <h5>Obras, Servicios Públicos e Infraestructura</h5>
+          <p>Alumbrado, recolección de residuos, mantenimiento urbano, comisiones vecinales y fibra óptica municipal.</p>
         </div>
         <div class="org-card highlight">
           <span class="star">★ Pilar 3</span>
-          <h5>Educación y Vinculación Universitaria</h5>
-          <p>Mesa de gestión con el IES Fracchia, UNNE, UNCAUS y UTN.</p>
+          <h5>Capital Humano</h5>
+          <p>Asistencia social, niñez, discapacidad y Subsecretaría de Educación.</p>
         </div>
       </div>
     </div>
-    <div class="org-zoom">
-      <span class="tag">Zoom · la secretaría clave de la Fase 1</span>
-      <h4>Secretaría de Modernización y Gestión Pública</h4>
-      <ul>
-        <li>Dirección de Gobierno Digital y Trámites Online.</li>
-        <li>Dirección de Procesos y Recursos Humanos.</li>
-        <li>Dirección de Datos e Indicadores de Gestión.</li>
-      </ul>
+    <div class="org-zoom-row">
+      <div class="org-zoom">
+        <span class="tag">Zoom · la secretaría clave de la Fase 1</span>
+        <h4>Secretaría de Modernización y Gestión Pública</h4>
+        <ul>
+          <li>Dirección de Gobierno Digital y Trámites Online.</li>
+          <li>Dirección de Procesos y Recursos Humanos.</li>
+          <li>Dirección de Datos e Indicadores de Gestión.</li>
+        </ul>
+      </div>
+      <div class="org-zoom">
+        <span class="tag">Zoom · la pieza clave de la Fase 1.5</span>
+        <h4>Subsecretaría de Gestión de Asuntos Vecinales</h4>
+        <ul>
+          <li>Depende de Obras, Servicios Públicos e Infraestructura.</li>
+          <li>Recibe y prioriza los pedidos de las comisiones vecinales.</li>
+          <li>Administra el formato de proyecto estandarizado por barrio.</li>
+        </ul>
+      </div>
+      <div class="org-zoom">
+        <span class="tag">Zoom · la pieza clave del Pilar 3</span>
+        <h4>Subsecretaría de Educación</h4>
+        <ul>
+          <li>Depende de la Secretaría de Capital Humano.</li>
+          <li>Mesa de gestión con el IES Fracchia, UNNE, UNCAUS y UTN.</li>
+          <li>En Fase 2, gestiona también la Escuela Municipal.</li>
+        </ul>
+      </div>
     </div>
 
     <h3 class="subhead">Cronograma tentativo — primeros 12 meses</h3>
@@ -607,6 +663,7 @@
           <li>Diseño del nuevo organigrama.</li>
           <li>Primeras reuniones con universidades (UNNE, UNCAUS, UTN).</li>
           <li>Primeros contactos con inversores potenciales.</li>
+          <li>Relevamiento de señalización vial y necesidades de tránsito.</li>
         </ul>
       </div>
       <div class="tl-item">
@@ -658,8 +715,34 @@
             <td>Indicadores de gestión (residuos, reclamos, trámites) publicados y actualizados</td>
             <td class="plazo">6 meses</td>
           </tr>
+          <tr>
+            <td class="pilarcol">Tránsito</td>
+            <td>Personal municipal reasignado a inspección de tránsito y señalización crítica renovada, sin aumento de planta</td>
+            <td class="plazo">6 meses</td>
+          </tr>
         </tbody>
       </table>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="fase15">
+  <div class="wrap">
+    <div class="kicker">FASE 1.5 · OBRAS CHICAS Y PARTICIPACIÓN</div>
+    <h2>Comisiones vecinales, con estructura</h2>
+    <p class="section-lead">Antes de encarar obra pública grande (Fase 2), hay una capa intermedia: ordenar la participación de los barrios y resolver lo chico rápido, con los propios vecinos como parte de la gestión.</p>
+    <div class="fase-block">
+      <span class="tag">Fase 1.5 · Plan de comisiones vecinales</span>
+      <h3>El barrio como socio de la gestión, no como receptor pasivo</h3>
+      <span class="cond-note">Se activa cuando: la Fase 1 está en marcha (nuevo organigrama y Secretaría de Modernización funcionando)</span>
+      <p class="desc">Hoy el municipio no tiene una estructura estándar para que las comisiones vecinales funcionen, ni un canal formal para elevar sus pedidos. Sin eso, la única forma de saber qué necesita cada barrio es mandar personal municipal a recorrerlo — algo caro y poco preciso. Nadie conoce mejor el estado del alumbrado, las calles o los espacios verdes de un barrio que el propio vecino que vive ahí.</p>
+      <ul>
+        <li>Estructura organizativa estándar para todas las comisiones vecinales: roles, forma de elección y renovación, y reconocimiento formal del municipio.</li>
+        <li>Nueva Subsecretaría de Gestión de Asuntos Vecinales, dependiente de la Secretaría de Obras, Servicios Públicos e Infraestructura.</li>
+        <li>Formato de proyecto estandarizado: cada comisión eleva sus pedidos —alumbrado, calles, espacios verdes, poda, veredas— con la misma estructura, y puede hacer seguimiento del estado.</li>
+        <li>Las comisiones ayudan a priorizar: complementan el criterio técnico de la Fase 2 con la necesidad real que marca cada barrio.</li>
+        <li>Menor costo municipal: se reduce la necesidad de personal dedicado a relevar y auditar barrio por barrio.</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -668,16 +751,76 @@
   <div class="wrap">
     <div class="kicker">FASE 2</div>
     <h2>Recién ahí, invertir en obra</h2>
-    <p class="section-lead">La obra pública no se descarta — se ordena. Se financia con crecimiento real, no con deuda ni con promesas.</p>
+    <p class="section-lead">La obra pública no se descarta — se ordena. Se financia con crecimiento real, no con deuda ni con promesas. Y no toda la inversión es asfalto: lo primero es capital humano.</p>
+
     <div class="fase-block">
-      <span class="tag">Fase 2 · Obra pública e infraestructura</span>
-      <h3>Invertir cuando haya con qué</h3>
-      <span class="cond-note">Se activa cuando: la Fase 1 muestra resultados y las cuentas públicas están en equilibrio</span>
-      <p class="desc">Con un estado más eficiente (Fase 1) y más actividad privada generando recaudación genuina, recién ahí tiene sentido planificar obra pública de mayor escala: asfalto, redes de agua y cloacas, infraestructura urbana. La prioridad de qué obra va primero se define con criterio técnico —impacto y urgencia— no con criterio electoral.</p>
+      <span class="tag">Fase 2 · Primer paso — Escuela Municipal</span>
+      <h3>Antes que el asfalto, invertir en la próxima generación</h3>
+      <span class="cond-note">Se activa cuando: hay equilibrio fiscal sostenido y la Fase 1.5 está en marcha</span>
+      <p class="desc">La Fase 1 (Pilar 3) siembra las bases institucionales para traer una universidad, pero eso lleva años. Mientras tanto, la ciudad necesita mejorar el capital humano de la próxima generación ya. Una escuela municipal no reemplaza al sistema educativo provincial: lo refuerza.</p>
       <ul>
-        <li>Plan de obras priorizado por impacto técnico, no por calendario electoral.</li>
+        <li>Escuela municipal de apoyo, complementaria al sistema provincial — no un reemplazo.</li>
+        <li>Laboratorio de ciencia y tecnología, algo que hoy no existe en ninguna escuela de la ciudad.</li>
+        <li>Clases de refuerzo en las materias donde más se atrasan los alumnos de la escuela provincial.</li>
+        <li>Cursos extracurriculares de valor social: educación vial, educación financiera básica, primeros auxilios, herramientas digitales, y otros que se identifiquen como prioritarios.</li>
+        <li>Objetivo doble: mejorar el capital humano de la próxima generación y aumentar las chances reales de acceso y permanencia en la universidad.</li>
+        <li>Se construye y financia antes que la obra de infraestructura de mayor escala: el capital humano es la base de todo lo demás.</li>
+      </ul>
+    </div>
+
+    <div class="fase-block">
+      <span class="tag">Fase 2 · Segundo paso — Obra pública e infraestructura</span>
+      <h3>Invertir cuando haya con qué</h3>
+      <span class="cond-note">Se activa cuando: la Escuela Municipal está en marcha y las cuentas públicas siguen en equilibrio</span>
+      <p class="desc">Con un estado más eficiente (Fase 1) y más actividad privada generando recaudación genuina, recién ahí tiene sentido planificar obra pública de mayor escala. No es "asfalto porque sí": es un plan ordenado por categoría, donde la necesidad real de cada barrio —que marcan las comisiones vecinales de la Fase 1.5— se combina con el criterio técnico para definir qué va primero.</p>
+
+      <h4 class="sub">Qué comprende la obra de infraestructura</h4>
+      <div class="obra-grid">
+        <div class="obra-card">
+          <h5>Vialidad</h5>
+          <p>Asfalto, ripio, bacheo y mantenimiento de calles.</p>
+        </div>
+        <div class="obra-card">
+          <h5>Alumbrado y semaforización</h5>
+          <p>Alumbrado LED y semáforos en los cruces de mayor tránsito.</p>
+        </div>
+        <div class="obra-card">
+          <h5>Hidráulica y desagües</h5>
+          <p>Alcantarillado pluvial, cordón cuneta y un plan de desagües para prevenir inundaciones.</p>
+        </div>
+        <div class="obra-card">
+          <h5>Espacios públicos</h5>
+          <p>Plazas, espacios verdes y veredas en condiciones.</p>
+        </div>
+        <div class="obra-card">
+          <h5>Agua y cloacas</h5>
+          <p>Coordinación con la provincia donde el municipio no tiene competencia directa, priorizando los barrios sin cobertura.</p>
+        </div>
+        <div class="obra-card">
+          <h5>Edificios y equipamiento público</h5>
+          <p>Mantenimiento de edificios municipales, mercado y cementerio.</p>
+        </div>
+      </div>
+
+      <h4 class="sub">Cómo se prioriza y financia</h4>
+      <ul>
+        <li>Plan de obras priorizado por impacto técnico y por la necesidad real que marcan las comisiones vecinales, no por calendario electoral.</li>
         <li>Financiamiento con superávit genuino y/o crédito responsable, nunca comprometiendo el equilibrio fiscal.</li>
         <li>Transparencia total: presupuesto y avance de cada obra, público y auditable.</li>
+      </ul>
+    </div>
+
+    <div class="fase-block">
+      <span class="tag">Fase 2 · En paralelo — Infraestructura digital y seguridad</span>
+      <h3>Fibra óptica, datacenter y seguridad conectada</h3>
+      <span class="cond-note">Se ejecuta en paralelo con la obra pública tradicional: asfalto, ripio e iluminación</span>
+      <p class="desc">Mientras se hace la obra pública tradicional, es el momento de tender infraestructura digital: una vez que se abre la calle para una obra, sale mucho más barato meter la fibra al mismo tiempo que volver después. Es la base para que el estado moderno de la Fase 1 funcione a pleno y para que la ciudad sea más atractiva para invertir.</p>
+      <ul>
+        <li>Red de fibra óptica municipal que conecte escuelas, centros de salud, la municipalidad, la Escuela Municipal y demás instituciones públicas.</li>
+        <li>Internet de alta calidad para las instituciones conectadas a la red.</li>
+        <li>Datacenter municipal para alojar los sistemas del propio municipio y de otras instituciones públicas, en vez de depender de terceros.</li>
+        <li>Red de cámaras de seguridad interconectada con la Policía.</li>
+        <li>Alarmas vecinales interconectadas con la Policía, en coordinación con las comisiones de la Fase 1.5.</li>
       </ul>
     </div>
   </div>
@@ -742,7 +885,7 @@
         <li>No hay financiamiento de promesas rompiendo el equilibrio fiscal. Las cuentas públicas ordenadas son una condición para todo lo demás, no una opción.</li>
         <li>No hay uso del empleo público como herramienta para maquillar el desempleo. El objetivo es empleo privado real.</li>
       </ul>
-      <p style="margin-top:20px;color:var(--muted);">La Fase 2 y la Fase 3 existen precisamente para eso: para que la obra y la escala lleguen cuando haya con qué financiarlas, no antes.</p>
+      <p style="margin-top:20px;color:var(--muted);">La Fase 1.5, la Fase 2 y la Fase 3 existen precisamente para eso: para que la obra y la escala lleguen cuando haya con qué financiarlas, no antes.</p>
     </div>
     <div class="badge-row">
       <span class="badge">Equilibrio fiscal</span>
