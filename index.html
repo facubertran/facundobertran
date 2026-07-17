@@ -243,7 +243,10 @@
     display:grid;grid-template-columns:1fr;
     gap:24px;margin-top:36px;
   }
-  @media(min-width:640px){.org-zoom-row{grid-template-columns:repeat(2,1fr);}}
+  @media(min-width:640px){
+    .org-zoom-row{grid-template-columns:repeat(2,1fr);}
+    .org-zoom-row .org-zoom:last-child:nth-child(odd){grid-column:1 / -1;}
+  }
   .org-zoom{
     background:var(--card);border:1px solid var(--accent);border-radius:12px;
     padding:30px;
@@ -412,6 +415,7 @@
       <a href="#fases">El plan</a>
       <a href="#pilares">Fase 1</a>
       <a href="#comisiones">Comisiones vecinales</a>
+      <a href="#emergencias">Emergencias</a>
       <a href="#eisenhower">Prioridades</a>
       <a href="#casos">Casos</a>
       <a href="#faq">FAQ</a>
@@ -632,6 +636,21 @@
       </ul>
     </div>
 
+    <h3 class="subhead" id="emergencias">Consejo Municipal de Emergencias y Gestión del Riesgo</h3>
+    <p class="subhead-lead">Una propuesta acercada por la Asociación de Bomberos Voluntarios de General José de San Martín, incorporada a este plan.</p>
+    <div class="fase-block">
+      <span class="tag">Fase 1 · Programa de Fortalecimiento de Bomberos Voluntarios y Gestión Integral del Riesgo</span>
+      <h3>Trabajo articulado, no organismos aislados</h3>
+      <p class="desc">Frente a fenómenos climáticos como El Niño —inundaciones, anegamientos, caída de árboles, evacuaciones e incendios posteriores— la ciudad no puede depender de que cada institución responda por su cuenta. Lo que hace la diferencia no es el fenómeno puntual: es que Bomberos, el municipio, salud, policía, educación y desarrollo social tengan un canal formal para trabajar juntos, antes de que llegue la emergencia, no durante.</p>
+      <ul>
+        <li>Reconocimiento institucional de los Bomberos Voluntarios como organismo estratégico del Sistema Municipal de Emergencias.</li>
+        <li>Creación del Consejo Municipal de Emergencias, integrado por Bomberos Voluntarios, el municipio, Salud, Policía, Capital Humano, Educación y demás organismos que correspondan.</li>
+        <li>Plan de contingencia climática elaborado en conjunto, con protocolos claros para inundaciones, anegamientos, caída de árboles, evacuaciones e incendios posteriores.</li>
+        <li>El Consejo se activa antes de la emergencia —prevención y protocolo— y durante ella —coordinación—, no solo después.</li>
+      </ul>
+      <p style="margin-top:18px;font-size:12.5px;color:var(--muted);">Propuesta acercada por la Asociación de Bomberos Voluntarios de General José de San Martín.</p>
+    </div>
+
     <div class="kicker" style="margin-top:50px;">CÓMO SE VERÍA</div>
     <h2 style="font-size:clamp(24px,3.4vw,34px);">Organigrama tentativo</h2>
     <p class="org-note">Un boceto de cómo podría ordenarse el ejecutivo municipal: pocas secretarías, cada una con una función clara. Nada de esto es definitivo — es un punto de partida para discutir, y va a terminar de definirse con criterio técnico. Las marcadas con ⭐ son las que concentran el foco de la Fase 1.</p>
@@ -643,7 +662,7 @@
       <div class="org-row">
         <div class="org-card">
           <h5>Gobierno y Coordinación General</h5>
-          <p>Articulación institucional, RR.HH., despacho general y ordenamiento del tránsito.</p>
+          <p>Articulación institucional, RR.HH., despacho general, ordenamiento del tránsito y Consejo Municipal de Emergencias.</p>
         </div>
         <div class="org-card">
           <h5>Hacienda y Administración</h5>
@@ -708,6 +727,15 @@
           <li>En Fase 2, gestiona también la Escuela Municipal.</li>
         </ul>
       </div>
+      <div class="org-zoom">
+        <span class="tag">Zoom · propuesta de Bomberos Voluntarios</span>
+        <h4>Consejo Municipal de Emergencias y Gestión del Riesgo</h4>
+        <ul>
+          <li>Depende de la Secretaría de Gobierno y Coordinación General.</li>
+          <li>Integrado por Bomberos Voluntarios, Salud, Policía, Capital Humano, Educación y el municipio.</li>
+          <li>Plan de contingencia climática y protocolos de emergencia trabajados en conjunto.</li>
+        </ul>
+      </div>
     </div>
 
     <h3 class="subhead">Cronograma tentativo — primeros 24 meses</h3>
@@ -724,6 +752,7 @@
           <li>Primeros contactos con inversores potenciales.</li>
           <li>Relevamiento de señalización vial y necesidades de tránsito.</li>
           <li>Lanzamiento del registro público de datos y estadísticas, desde el primer día.</li>
+          <li>Reconocimiento institucional de Bomberos Voluntarios y primera convocatoria al Consejo Municipal de Emergencias.</li>
         </ul>
       </div>
       <div class="tl-item">
@@ -791,6 +820,11 @@
             <td class="pilarcol">Tránsito</td>
             <td>Personal municipal reasignado a inspección de tránsito y señalización crítica renovada, sin aumento de planta</td>
             <td class="plazo">6 meses</td>
+          </tr>
+          <tr>
+            <td class="pilarcol">Emergencias</td>
+            <td>Consejo Municipal de Emergencias constituido y primer protocolo de contingencia climática aprobado</td>
+            <td class="plazo">3 meses</td>
           </tr>
         </tbody>
       </table>
@@ -959,6 +993,7 @@
           <li>Subsecretaría de Métricas, Estadísticas y Transparencia, activa desde el día 1.</li>
           <li>Plan de ordenamiento del tránsito: señalización y reasignación de personal.</li>
           <li>Comisiones vecinales y Subsecretaría de Asuntos Vecinales.</li>
+          <li>Consejo Municipal de Emergencias y reconocimiento institucional de Bomberos Voluntarios.</li>
         </ul>
       </div>
       <div class="eisen-card q2">
